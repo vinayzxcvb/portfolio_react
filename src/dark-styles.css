@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.6;
+}
+
+.section-header {
+  font-size: 1.875rem;
+  letter-spacing: 0.1em;
+  position: relative;
+  animation: fadeInDown 1.5s ease-out;
+  color: white;
+}
+
+.container {
+  max-width: 960px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #161b22;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #8b949e;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #58a6ff;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #58a6ff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+
+/* Hamburger menu */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  background: #c9d1d9;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+.nav-open .hamburger {
+  background: transparent;
+}
+
+.nav-open .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-open .hamburger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+
+/* === Skills === */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Replace your existing .skill styles with this block */
+
+.skill {
+  background: #2d3748; /* A slightly different background for better contrast */
+  color: white;
+  border-radius: 12px; /* A more standard corner radius */
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* --- Layout Fixes --- */
+  width: 120px;         /* 1. Set a fixed width */
+  height: 120px;        /* 2. Set a fixed height */
+  padding: 1rem;        /* 3. Add some internal padding */
+  display: flex;        /* 4. Use flexbox for alignment */
+  flex-direction: column; /* 5. Stack icon and text vertically */
+  justify-content: center;/* 6. Center content vertically */
+  align-items: center;    /* 7. Center content horizontally */
+  gap: 0.75rem;         /* 8. Add space between icon and text */
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-icon {
+  height: 3rem;  /* 48px - Make icons larger */
+  width: 3rem;   /* 48px - Make icons larger */
+  object-fit: contain; /* Ensure icons scale properly without distortion */
+}
+
+/* New filter to make the new SVG icon white */
+.skill-icon[src*="svgrepo"] {
+  filter: invert(1);
+}
+
+/* Replace your old .skill-category-title style with this one */
+
+.skill-category-title {
+  color: #e6edf3; /* Brighter white for the title text */
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  position: relative; /* Needed for the pseudo-element */
+}
+
+/* This creates the short, colored accent line */
+.skill-category-title::after {
+  content: '';
+  display: block;
+  width: 70px;          /* Width of the accent line */
+  height: 4px;          /* Thickness of the line */
+  background-color: #58a6ff; /* Accent color */
+  border-radius: 2px;   /* Rounded corners for the line */
+  margin: 0.6rem auto 0; /* Centers the line and adds space below the text */
+}
+
+/* Removes the extra top margin from the very first category title */
+.skill-category-title:first-of-type {
+  margin-top: 1rem;
+}
+
+/* Hero */
+.hero-section {
+  background: linear-gradient(135deg, #238636 0%, #2ea043 100%);
+  color: #f0f6fc;
+  /* Reduced bottom padding to make space for the icons inside the curve */
+  padding: 6rem 1rem 6rem; 
+  text-align: center;
+  border-radius: 0 0 50% 50% / 20%;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title span {
+  color: #aff5b4;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 30px;
+  padding: 0.75rem 2.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #238636;
+  color: #FEE162;
+  box-shadow: 0 4px 15px #2ea043aa;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #2ea043;
+  box-shadow: 0 6px 20px #2ea043dd;
+  outline: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #58a6ff;
+  border: 2px solid #58a6ff;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  background-color: #58a6ff;
+  color: #0d1117;
+  outline: none;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #58a6ff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-description {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  color: #8b949e;
+  font-size: 1.1rem;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+  background-color: #161b22;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px #23863644;
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  box-shadow: 0 4px 20px #2ea043aa;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #8affc1;
+}
+
+.project-desc {
+  color: #8b949e;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+
+/* Contact Form */
+.form-container {
+    padding: 2rem 0;
+}
+
+form {
+  background-color: #161b22;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #c9d1d9;
+}
+
+input[type="name"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #30363d;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #238636;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2ea043;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #161b22;
+  color: #8b949e;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: #58a6ff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: #161b22;
+    flex-direction: column;
+    width: 200px;
+    height: calc(100vh - 60px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    padding: 2rem 1rem;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.7);
+  }
+
+  .nav.nav-open-mobile {
+    transform: translateX(0);
+  }
+
+  .nav-toggle {
+    display: block;
+    z-index: 1000;
+  }
+  
+  .nav-toggle.nav-open .hamburger {
+    background: transparent;
+  }
+  
+  .nav-toggle.nav-open .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .nav-toggle.nav-open .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-list li {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+}
+
+/* I noticed your original CSS had form styles that weren't being applied.
+   I fixed the selectors and adjusted them to fit the dark theme. */
