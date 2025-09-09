@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
+import { ThemeProvider } from './context/ThemeContext';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -10,6 +11,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
+    <ThemeProvider>
       <Header />
       <main>
         <Hero />
@@ -19,6 +21,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      </ThemeProvider>
     </>
   );
 }

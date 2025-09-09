@@ -20,6 +20,12 @@ const projectsData = [
     link: 'https://custombutmaker.niat.tech/',
     sourceCodeLink: '#', // TODO: Replace with your actual source code link
     description: null
+  },
+  {
+    title: 'joke generator',
+    link: 'https://joke-generator-pied.vercel.app/',
+    sourceCodeLink: 'https://github.com/vinayzxcvb/joke-generator.git', // TODO: Replace with your actual source code link
+    description: null
   }
 ];
 

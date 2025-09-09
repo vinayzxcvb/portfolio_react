@@ -20,18 +20,33 @@ const Hero = () => {
         </div>
 
         {/* Main Text Content */}
-        <div className="hero-content text-center md:text-left">
+        {/* Added flex classes for proper alignment on all screen sizes */}
+        <div className="hero-content text-center md:text-left flex flex-col items-center md:items-start">
           <h1 className="hero-title">Hey, I'm <span>Siva Vinay</span></h1>
           <p className="hero-subtitle">Crafting Beautiful Digital Experiences</p>
           <a href="#projects" className="btn btn-primary" onClick={handleScrollToProjects}>
             Explore My Work
           </a>
+
+          {/* Social Media Links - MOBILE VIEW */}
+          {/* This block is hidden on medium screens and up (md:hidden) */}
+          <div className="md:hidden flex gap-6 text-3xl mt-8 z-20">
+            <a href="https://github.com/vinayzxcvb" target="_blank" rel="noopener noreferrer" className="text-[var(--hero-text)] hover:text-gray-400 hover:drop-shadow-[0_0_10px_rgba(156,163,175,0.8)] transition duration-300">
+              <i className="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/_siva_vinay_07/" target="_blank" rel="noopener noreferrer" className="text-[var(--hero-text)] hover:text-pink-500 hover:drop-shadow-[0_0_10px_rgba(236,72,153,0.8)] transition duration-300">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/siva-vinay/" target="_blank" rel="noopener noreferrer" className="text-[var(--hero-text)] hover:text-blue-500 hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] transition duration-300">
+              <i className="fab fa-linkedin"></i>
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Social Media Links - moved further up and left */}
-      {/* Changed bottom-8 to bottom-16 and right-8 to right-16 */}
-      <div className="absolute bottom-16 right-16 flex gap-6 text-3xl z-20">
+      {/* Social Media Links - DESKTOP VIEW */}
+      {/* This block is hidden by default and shown as a flex container on medium screens and up (hidden md:flex) */}
+      <div className="hidden md:flex absolute bottom-16 right-16 gap-6 text-3xl z-20">
         <a href="https://github.com/vinayzxcvb" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 hover:drop-shadow-[0_0_10px_rgba(156,163,175,0.8)] transition duration-300">
           <i className="fab fa-github"></i>
         </a>

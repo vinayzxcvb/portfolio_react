@@ -7,7 +7,7 @@ const categorizedSkills = {
     { name: 'CSS', iconUrl: 'https://res.cloudinary.com/dexgotdr4/image/upload/v1756893485/css3-original_eow9i8.svg' },
     { name: 'JavaScript', iconUrl: 'https://res.cloudinary.com/dexgotdr4/image/upload/v1756893525/javascript-original_z7flc1.svg' },
     { name: 'React', iconUrl: 'https://res.cloudinary.com/dexgotdr4/image/upload/v1756893545/react-original_ys7gpo.svg' },
-    // { name: 'Responsive Design', iconUrl: 'https://www.svgrepo.com/show/443319/responsive-design-tablet-mobile-desktop.svg' } // Re-added this key skill
+    { name: 'Tailwind CSS', iconUrl: 'https://res.cloudinary.com/dexgotdr4/image/upload/v1757311533/OIP-removebg-preview_ieskve.png' } // Re-added this key skill
   ],
   "Backend": [
     { name: 'Python', iconUrl: 'https://res.cloudinary.com/dexgotdr4/image/upload/v1756893636/python-original_mwhcol.svg' },

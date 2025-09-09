@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; // Removed 'useContext'
+import ThemeToggleButton from './ThemeToggleButton';
+// No longer need to import ThemeContext here
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  // const { theme } = useContext(ThemeContext); // This unused line is now removed
 
   const handleNavClick = (targetId) => {
     const targetElement = document.getElementById(targetId);
@@ -27,14 +30,19 @@ const Header = () => {
             <li><span className="nav-link" onClick={() => handleNavClick('contact')}>Contact</span></li>
           </ul>
         </nav>
-        <button
-          className={`nav-toggle ${isNavOpen ? 'nav-open' : ''}`}
-          aria-label="Toggle navigation menu"
-          aria-expanded={isNavOpen}
-          onClick={() => setIsNavOpen(!isNavOpen)}
-        >
-          <span className="hamburger"></span>
-        </button>
+        
+        <div className="flex items-center gap-4">
+          <ThemeToggleButton />
+          <button
+            className={`nav-toggle ${isNavOpen ? 'nav-open' : ''}`}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isNavOpen}
+            onClick={() => setIsNavOpen(!isNavOpen)}
+          >
+            <span className="hamburger"></span>
+          </button>
+        </div>
+
       </div>
     </header>
   );
